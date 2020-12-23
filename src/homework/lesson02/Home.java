@@ -44,14 +44,14 @@ public class Home {
         System.out.println(Arrays.toString(array6) + " -> " + checkBalance(array6));
 
         System.out.println("---Задание 7---");
-        int[] array7 = {10, 20, 30, 40, 50};
+        int[] array7 = {8, 16, 32, 64, 128, 256, 512, 1024};
         System.out.println("Первоначальный массив: " + Arrays.toString(array7));
         System.out.println("Измененный массив: " + Arrays.toString(valueOffset1(array7, 2)));
 
         System.out.println("---Задание 8---");
-        int[] array8 = {8, 16, 32, 64, 128, 256, 512, 1024};
-        System.out.println("Первоначальный массив: " + Arrays.toString(array8));
-        System.out.println("Измененный массив: " + Arrays.toString(valueOffset2(array8, -5)));
+
+        System.out.println("Первоначальный массив: " + Arrays.toString(array7));
+        System.out.println("Измененный массив: " + Arrays.toString(valueOffset2(array7, -5)));
     }
 
     public static int[] replacement(int[] array) {
