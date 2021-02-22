@@ -9,7 +9,7 @@ public class MultiThreading {
     private static final int size = 10000000;
     private static final int h = size / 2;
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
         workArray();
         workArrayWithTwoThread();
     }
@@ -24,7 +24,7 @@ public class MultiThreading {
         System.out.println("Первый метод справляется за " + (System.currentTimeMillis() - a) + " мс");
     }
 
-    public static void workArrayWithTwoThread() {
+    public static void workArrayWithTwoThread() throws InterruptedException {
         float[] arr = new float[size];
         Arrays.fill(arr, 1);
         float[] arrayPartOne = new float[h];
@@ -48,6 +48,8 @@ public class MultiThreading {
 
         thread1.start();
         thread2.start();
+        thread1.join();
+        thread2.join();
 
         System.arraycopy(arrayPartOne, 0, arr, 0, h);
         System.arraycopy(arrayPartTwo, 0, arr, h, h);
